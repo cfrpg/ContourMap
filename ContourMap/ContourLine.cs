@@ -13,45 +13,24 @@ namespace ContourMap
 	{
 		List<Vector3> points;
 		Color color;
-		VertexPositionColor[] verts; 
+		VertexPositionColor[] verts;
 
 		public List<Vector3> Points
 		{
-			get
-			{
-				return points;
-			}
-
-			set
-			{
-				points = value;
-			}
+			get { return points; }
+			set { points = value; }
 		}
 
 		public Color Color
 		{
-			get
-			{
-				return color;
-			}
-
-			set
-			{
-				color = value;
-			}
+			get { return color; }
+			set { color = value; }
 		}
 
 		public VertexPositionColor[] Verts
 		{
-			get
-			{
-				return verts;
-			}
-
-			set
-			{
-				verts = value;
-			}
+			get { return verts; }
+			set { verts = value; }
 		}
 
 		public ContourLine(Color c)
@@ -64,14 +43,13 @@ namespace ContourMap
 		{
 			List<VertexPositionColor> vertList = new List<VertexPositionColor>();
 			vertList.Add(new VertexPositionColor(points[0], color));
-			for(int i=1;i<points.Count;i++)
+			for (int i = 1; i < points.Count; i++)
 			{
-				//if (points[i] != vertList[vertList.Count - 1].Position)
-					vertList.Add(new VertexPositionColor(points[i], color));
+				vertList.Add(new VertexPositionColor(points[i], color));
 			}
 			verts = vertList.ToArray();
 		}
 
-		
+
 	}
 }
